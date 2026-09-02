@@ -6,5 +6,5 @@ from langchain_mistralai import ChatMistralAI
 
 model = ChatMistralAI(model = "mistral-small-2603")
 
-response = model.invoke("give 30 words paragraph about MERN Stack")
+response = model.invoke("what is data science")
 print(response.content) 
