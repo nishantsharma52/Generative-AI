@@ -32,9 +32,18 @@ load_dotenv()  #to use api keys stored in .env file
 #using mistralai 
 #using model class
 
-from langchain_mistralai import ChatMistralAI
 
-model = ChatMistralAI(model = "mistral-small-2603")
+# from langchain_mistralai import ChatMistralAI
+# model = ChatMistralAI(model="mistral-small-2603", temperature=0.9, max_tokens=20)
+# response = model.invoke("write a poem on AI")
+# print(response.content)
 
-response = model.invoke("what is data science")
-print(response.content) 
+from langchain_groq import ChatGroq
+
+model = ChatGroq(
+    model="openai/gpt-oss-20b", temperature=0.5, max_tokens=20
+)
+
+response = model.invoke("Write a poem on Ai")
+
+print(response.content)
